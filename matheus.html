@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      #Redpill {
+        background-color: #212121;
+        color: #fff;
+        width: 100%;
+        font-weight: bold;
+        height: 100%;
+        padding: 28px 0px 28px 0px;
+        text-align: center;
+      }
+      #DINAMICA {
+        text-align: center;
+      }
+      #ZERO {
+        text-align: center;
+        font-size: 96px;
+        margin-top: 76px;
+        margin-bottom: 76px;
+      }
+      #BOTAO {
+        text-align: center;
+      }
+
+      #BOTAO > button {
+        border: none;
+        padding: 10px 20px 10px 20px;
+        font-size: 20px;
+      }
+      #BOTAO > :nth-child(1) {
+        background-color: red;
+      }
+      #BOTAO > :nth-child(3) {
+        background-color: green;
+      }
+
+      #geral {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="Redpill">AULA 01</div>
+    <div id="geral">
+      <h3 id="DINAMICA">DINAMICA COM JAVASCRIPT</h3>
+      <h1 id="ZERO">0</h1>
+      <div id="BOTAO">
+        <button onclick="diminuir()">-1</button>
+        <button onclick="zero()">ZERO</button>
+        <button onclick="adicionar()">+1</button>
+      </div>
+    </div>
+
+    <script>
+      var contador = 2;
+
+      window.onload = function () {
+        document.getElementById('ZERO').innerHTML = `${contador}`;
+      };
+
+      function adicionar() {
+        contador = contador + 1;
+        document.getElementById('ZERO').innerHTML = `${contador}`;
+      }
+      function diminuir() {
+        contador = contador - 1;
+        document.getElementById('ZERO').innerHTML = `${contador}`;
+      }
+      function zero() {
+        if (contador === 0) {
+          alert('Da zero pra ele burro!');
+        } else {
+          contador = 0;
+          document.getElementById('ZERO').innerHTML = `${contador}`;
+        }
+      }
+    </script>
+  </body>
+</html>
